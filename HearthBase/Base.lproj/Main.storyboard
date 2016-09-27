@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ewR-9q-QVv">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HearthBase" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="awN-xr-iAN"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qeh-9G-xJi">
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="307" id="3dh-3Y-JEA"/>
+                                    <constraint firstAttribute="height" constant="465" id="y2A-Gk-t9l"/>
+                                </constraints>
+                            </imageView>
+                            <searchBar contentMode="redraw" placeholder="Search for cards" translatesAutoresizingMaskIntoConstraints="NO" id="bT5-oK-XIH">
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="cUc-jC-lNf"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="awN-xr-iAN" firstAttribute="centerY" secondItem="qeh-9G-xJi" secondAttribute="centerY" id="LiE-C3-R4a"/>
+                            <constraint firstItem="qeh-9G-xJi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="18" id="OC3-r6-kkd"/>
+                            <constraint firstItem="bT5-oK-XIH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="QDb-V8-3Ps"/>
+                            <constraint firstItem="qeh-9G-xJi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QOt-VO-Ru0"/>
+                            <constraint firstItem="awN-xr-iAN" firstAttribute="centerX" secondItem="qeh-9G-xJi" secondAttribute="centerX" id="dpV-gj-WD6"/>
+                            <constraint firstItem="bT5-oK-XIH" firstAttribute="centerX" secondItem="awN-xr-iAN" secondAttribute="centerX" id="hxJ-mi-Iks"/>
+                            <constraint firstItem="bT5-oK-XIH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="j6h-Ho-gfG"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qeh-9G-xJi" secondAttribute="bottom" constant="20" id="w0w-LN-jd1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Search" id="Hf2-FJ-rNc"/>
+                    <connections>
+                        <outlet property="cardImageView" destination="qeh-9G-xJi" id="NTv-aA-nRd"/>
+                        <outlet property="imageLoadingIndicator" destination="awN-xr-iAN" id="8wm-eJ-FjG"/>
+                        <outlet property="searchBar" destination="bT5-oK-XIH" id="ebO-55-H3v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="Z4P-bF-SMq">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="cu4-Rc-eI2"/>
+                        <outlet property="searchBar" destination="bT5-oK-XIH" id="Gcw-fV-bJ0"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="2967" y="-48"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="qVU-Qg-ng0">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ewR-9q-QVv" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="BzS-3O-7uz">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="FcP-3c-OpA" kind="relationship" relationship="viewControllers" id="q8C-pP-kfK"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DYw-Sw-gaQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1079.2" y="-48.125937031484263"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="HOL-xN-PxG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FcP-3c-OpA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="search" id="Ory-pf-qQp"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oQA-NQ-oaN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="uXd-23-MOS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LES-hQ-dZj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2018.4000000000001" y="-48.125937031484263"/>
+        </scene>
+    </scenes>
+</document>

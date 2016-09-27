@@ -1,0 +1,316 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		209E58941D85CC9A00A8FC43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209E58931D85CC9A00A8FC43 /* AppDelegate.swift */; };
+		209E58961D85CC9A00A8FC43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209E58951D85CC9A00A8FC43 /* ViewController.swift */; };
+		209E58991D85CC9A00A8FC43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 209E58971D85CC9A00A8FC43 /* Main.storyboard */; };
+		209E589B1D85CC9A00A8FC43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 209E589A1D85CC9A00A8FC43 /* Assets.xcassets */; };
+		209E589E1D85CC9A00A8FC43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 209E589C1D85CC9A00A8FC43 /* LaunchScreen.storyboard */; };
+		209E58A61D85CD5200A8FC43 /* HearthstoneSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209E58A51D85CD5200A8FC43 /* HearthstoneSearch.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		209E58901D85CC9A00A8FC43 /* HearthBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HearthBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		209E58931D85CC9A00A8FC43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		209E58951D85CC9A00A8FC43 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		209E58981D85CC9A00A8FC43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		209E589A1D85CC9A00A8FC43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		209E589D1D85CC9A00A8FC43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		209E589F1D85CC9A00A8FC43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		209E58A51D85CD5200A8FC43 /* HearthstoneSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HearthstoneSearch.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		209E588D1D85CC9A00A8FC43 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		209E58871D85CC9A00A8FC43 = {
+			isa = PBXGroup;
+			children = (
+				209E58921D85CC9A00A8FC43 /* HearthBase */,
+				209E58911D85CC9A00A8FC43 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		209E58911D85CC9A00A8FC43 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				209E58901D85CC9A00A8FC43 /* HearthBase.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		209E58921D85CC9A00A8FC43 /* HearthBase */ = {
+			isa = PBXGroup;
+			children = (
+				209E58931D85CC9A00A8FC43 /* AppDelegate.swift */,
+				209E58951D85CC9A00A8FC43 /* ViewController.swift */,
+				209E58A51D85CD5200A8FC43 /* HearthstoneSearch.swift */,
+				209E58971D85CC9A00A8FC43 /* Main.storyboard */,
+				209E589A1D85CC9A00A8FC43 /* Assets.xcassets */,
+				209E589C1D85CC9A00A8FC43 /* LaunchScreen.storyboard */,
+				209E589F1D85CC9A00A8FC43 /* Info.plist */,
+			);
+			path = HearthBase;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		209E588F1D85CC9A00A8FC43 /* HearthBase */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 209E58A21D85CC9A00A8FC43 /* Build configuration list for PBXNativeTarget "HearthBase" */;
+			buildPhases = (
+				209E588C1D85CC9A00A8FC43 /* Sources */,
+				209E588D1D85CC9A00A8FC43 /* Frameworks */,
+				209E588E1D85CC9A00A8FC43 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HearthBase;
+			productName = HearthBase;
+			productReference = 209E58901D85CC9A00A8FC43 /* HearthBase.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		209E58881D85CC9A00A8FC43 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Ritam Sarmah";
+				TargetAttributes = {
+					209E588F1D85CC9A00A8FC43 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 582KY6XV9S;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 209E588B1D85CC9A00A8FC43 /* Build configuration list for PBXProject "HearthBase" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 209E58871D85CC9A00A8FC43;
+			productRefGroup = 209E58911D85CC9A00A8FC43 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				209E588F1D85CC9A00A8FC43 /* HearthBase */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		209E588E1D85CC9A00A8FC43 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				209E589E1D85CC9A00A8FC43 /* LaunchScreen.storyboard in Resources */,
+				209E589B1D85CC9A00A8FC43 /* Assets.xcassets in Resources */,
+				209E58991D85CC9A00A8FC43 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		209E588C1D85CC9A00A8FC43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				209E58A61D85CD5200A8FC43 /* HearthstoneSearch.swift in Sources */,
+				209E58961D85CC9A00A8FC43 /* ViewController.swift in Sources */,
+				209E58941D85CC9A00A8FC43 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		209E58971D85CC9A00A8FC43 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				209E58981D85CC9A00A8FC43 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		209E589C1D85CC9A00A8FC43 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				209E589D1D85CC9A00A8FC43 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		209E58A01D85CC9A00A8FC43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		209E58A11D85CC9A00A8FC43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		209E58A31D85CC9A00A8FC43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 582KY6XV9S;
+				INFOPLIST_FILE = HearthBase/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ritamsarmah.HearthBase;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		209E58A41D85CC9A00A8FC43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 582KY6XV9S;
+				INFOPLIST_FILE = HearthBase/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ritamsarmah.HearthBase;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		209E588B1D85CC9A00A8FC43 /* Build configuration list for PBXProject "HearthBase" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				209E58A01D85CC9A00A8FC43 /* Debug */,
+				209E58A11D85CC9A00A8FC43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		209E58A21D85CC9A00A8FC43 /* Build configuration list for PBXNativeTarget "HearthBase" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				209E58A31D85CC9A00A8FC43 /* Debug */,
+				209E58A41D85CC9A00A8FC43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 209E58881D85CC9A00A8FC43 /* Project object */;
+}
