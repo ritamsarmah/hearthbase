@@ -58,10 +58,10 @@ class ViewController: UIViewController, UISearchControllerDelegate {
         
         switch type {
         case .cardNotFound:
-            alert = UIAlertController(title: "Card not found!", message: nil, preferredStyle: .alert)
+            alert = UIAlertController(title: "Unable to find card!", message: nil, preferredStyle: .alert)
             alert.addAction(dismissAction)
         case .cardImageNotFound:
-            alert = UIAlertController(title: "Card image not found!", message: nil, preferredStyle: .alert)
+            alert = UIAlertController(title: "Unable to load card image!", message: nil, preferredStyle: .alert)
             alert.addAction(dismissAction)
         }
         

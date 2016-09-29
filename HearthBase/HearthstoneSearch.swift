@@ -7,35 +7,33 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class HearthstoneSearch {
+    
     let url = URL(string: "https://api.hearthstonejson.com/v1/13921/enUS/cards.collectible.json")
     let cardImageUrl = "http://wow.zamimg.com/images/hearthstone/cards/enus/original/"
     
     // Returns card ID as String
     func search(for card: String) -> String? {
         let json = getJson()
-        for json_card in json {
-            if (json_card["name"] as! String).lowercased() == card.lowercased() {
-                return json_card["id"] as? String
+        for jsonCard in json.arrayValue {
+            if (jsonCard["name"].stringValue).lowercased() == card.lowercased() {
+                return jsonCard["id"].stringValue
             }
         }
         return nil
     }
     
-    func getCard(for id: String) -> [String:AnyObject]? {
+    // Returns info as JSON for card ID
+    func getCard(for id: String) -> JSON {
         let json = getJson()
-        for json_card in json {
-            if (json_card["id"] as! String == id) {
-                return json_card
+        for card in json.arrayValue {
+            if (card["id"].stringValue == id) {
+                return card
             }
         }
         return nil
-    }
-    
-    fileprivate func getJson() -> [[String:AnyObject]] {
-        let data = try! Data(contentsOf: url!)
-        return try! JSONSerialization.jsonObject(with: data) as! [[String:AnyObject]]
     }
     
     // Returns data for card image based on ID
@@ -49,4 +47,11 @@ class HearthstoneSearch {
             return nil
         }
     }
+    
+    // MARK: Helper Functions
+    fileprivate func getJson() -> JSON {
+        let data = try! Data(contentsOf: url!)
+        return JSON(data: data)
+    }
+    
 }
