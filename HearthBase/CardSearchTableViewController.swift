@@ -16,7 +16,6 @@ class CardSearchTableViewController: UITableViewController, UISearchBarDelegate 
     var cards = [Card]()
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print("Searching")
         searchBar.resignFirstResponder()
         if let requestedCards = database.search(for: searchBar.text!) {
             cards = requestedCards
@@ -49,8 +48,8 @@ class CardSearchTableViewController: UITableViewController, UISearchBarDelegate 
         let imageData = database.getCardImageData(for: card.id)
         cell.cardName.text = card.name
         cell.cardImageView.image = UIImage(data: imageData!)
-        cell.cardType.text = card.type.capitalized
-        cell.cardRarity.text = card.rarity.capitalized
+        cell.cardType.text = "Type: " + card.type.capitalized
+        cell.cardRarity.text = "Rarity: " + card.rarity.capitalized
         
         return cell
     }

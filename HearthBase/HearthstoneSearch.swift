@@ -19,14 +19,17 @@ class HearthstoneSearch {
         let json = getJson()
         var cards = [Card]()
         for jsonCard in json.arrayValue {
-            let cardName = jsonCard["name"].stringValue
-            if cardName.lowercased().hasPrefix(card.lowercased()) {
-                let newCard = Card(name: cardName,
-                                   id: jsonCard["id"].stringValue,
-                                   type: jsonCard["type"].stringValue,
-                                   text: jsonCard["text"].stringValue,
-                                   rarity: jsonCard["rarity"].stringValue)
-                cards.append(newCard)
+            let cardName = jsonCard["name"].stringValue.components(separatedBy: " ")
+            for word in cardName {
+                if word.lowercased().hasPrefix(card.lowercased()) {
+                    let newCard = Card(name: jsonCard["name"].stringValue,
+                                       id: jsonCard["id"].stringValue,
+                                       type: jsonCard["type"].stringValue,
+                                       text: jsonCard["text"].stringValue,
+                                       rarity: jsonCard["rarity"].stringValue)
+                    cards.append(newCard)
+                    continue
+                }
             }
         }
         
