@@ -21,6 +21,11 @@ class HearthstoneSearch {
         var secondary = [Card]()
         
         for card in json.arrayValue {
+            
+            if card["type"].stringValue == "HERO" {
+                continue
+            }
+            
             let name = card["name"].stringValue.lowercased()
             
             // Check for and returns exact match if found
