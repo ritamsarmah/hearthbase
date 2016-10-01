@@ -15,30 +15,33 @@ class HearthstoneSearch {
     let cardImageUrl = "http://wow.zamimg.com/images/hearthstone/cards/enus/original/"
     
     // Returns card ID as String
-    func search(for card: String) -> [Card]? {
+    func search(for searchText: String) -> [Card]? {
         let json = getJson()
-        var cards = [Card]()
-        for jsonCard in json.arrayValue {
-            let cardName = jsonCard["name"].stringValue.components(separatedBy: " ")
-            for word in cardName {
-                if word.lowercased().hasPrefix(card.lowercased()) {
-                    let newCard = Card(name: jsonCard["name"].stringValue,
-                                       id: jsonCard["id"].stringValue,
-                                       type: jsonCard["type"].stringValue,
-                                       text: jsonCard["text"].stringValue,
-                                       rarity: jsonCard["rarity"].stringValue)
+        var cards = [Card]() // More relevant matches are at the front
+        var secondary = [Card]()
+        
+        for card in json.arrayValue {
+            let name = card["name"].stringValue.lowercased()
+            
+            // Check for and returns exact match if found
+            if name == searchText.lowercased() {
+                return [createCard(from: card)]
+            } else if name.contains(searchText.lowercased()) {
+                let newCard = createCard(from: card)
+                
+                // Checks if searchText matches first word
+                if name.hasPrefix(searchText.lowercased()) {
                     cards.append(newCard)
-                    continue
+                } else {
+                    secondary.append(newCard)
                 }
             }
         }
         
-        if cards.isEmpty {
+        if cards.isEmpty && secondary.isEmpty {
             return nil
         } else {
-            for card in cards {
-                print(card.name)
-            }
+            cards.append(contentsOf: secondary)
             return cards
         }
     }
@@ -70,11 +73,7 @@ class HearthstoneSearch {
         let json = getJson()
         var cards = [Card]()
         for card in json.arrayValue {
-            let newCard = Card(name: card["name"].stringValue,
-                               id: card["id"].stringValue,
-                               type: card["type"].stringValue,
-                               text: card["text"].stringValue,
-                               rarity: card["rarity"].stringValue)
+            let newCard = createCard(from: card)
             cards.append(newCard)
         }
         return cards
@@ -84,6 +83,14 @@ class HearthstoneSearch {
     fileprivate func getJson() -> JSON {
         let data = try! Data(contentsOf: url!)
         return JSON(data: data)
+    }
+    
+    fileprivate func createCard(from data: JSON) -> Card {
+        return Card(name: data["name"].stringValue,
+                    id: data["id"].stringValue,
+                    type: data["type"].stringValue,
+                    text: data["text"].stringValue,
+                    rarity: data["rarity"].stringValue)
     }
     
 }

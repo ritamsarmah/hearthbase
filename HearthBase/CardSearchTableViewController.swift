@@ -19,7 +19,7 @@ class CardSearchTableViewController: UITableViewController, UISearchBarDelegate 
         searchBar.resignFirstResponder()
         if let requestedCards = database.search(for: searchBar.text!) {
             cards = requestedCards
-            tableView.reloadData()
+            tableView.reloadSections(IndexSet([0]), with: .automatic)
         } else {
             showAlert(for: .cardNotFound)
         }
