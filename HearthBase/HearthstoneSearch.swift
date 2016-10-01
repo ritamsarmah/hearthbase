@@ -28,10 +28,7 @@ class HearthstoneSearch {
             
             let name = card["name"].stringValue.lowercased()
             
-            // Check for and returns exact match if found
-            if name == searchText.lowercased() {
-                return [createCard(from: card)]
-            } else if name.contains(searchText.lowercased()) {
+            if name.contains(searchText.lowercased()) {
                 let newCard = createCard(from: card)
                 
                 // Checks if searchText matches first word

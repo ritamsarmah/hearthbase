@@ -39,6 +39,10 @@ class CardSearchTableViewController: UITableViewController, UISearchBarDelegate 
         searchBar.delegate = self
     }
     
+    override func didReceiveMemoryWarning() {
+        imageCache.removeAll()
+    }
+    
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -51,6 +55,10 @@ class CardSearchTableViewController: UITableViewController, UISearchBarDelegate 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CardCell", for: indexPath) as! CardTableViewCell
+        
+        // Reset cell
+        cell.cardName.text = nil
+        cell.cardImageView.image = nil
         
         let card = cards[indexPath.row]
         cell.cardName.text = card.name

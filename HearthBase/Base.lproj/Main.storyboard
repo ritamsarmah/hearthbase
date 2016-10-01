@@ -42,11 +42,11 @@
                             </scopeButtonTitles>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CardCell" rowHeight="96" id="hUS-0A-ZmG" customClass="CardTableViewCell" customModule="HearthBase" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CardCell" rowHeight="96" id="hUS-0A-ZmG" customClass="CardTableViewCell" customModule="HearthBase" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="136" width="375" height="96"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hUS-0A-ZmG" id="aqf-7o-Oii">
-                                    <frame key="frameInset" width="375" height="95"/>
+                                    <frame key="frameInset" width="342" height="95"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PRV-iD-CkD">
