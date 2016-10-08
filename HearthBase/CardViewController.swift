@@ -23,6 +23,7 @@ class CardViewController: UIViewController {
         if let image = normalImage {
             normalCardImageView.image = image
         }
+        
     }
     
     override func viewDidLayoutSubviews() {

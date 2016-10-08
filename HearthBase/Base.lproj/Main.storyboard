@@ -133,28 +133,25 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TGQ-jR-8lo">
                                         <subviews>
-                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="7du-Gn-9cZ"/>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hon-Af-h6l">
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="193" id="BoV-Xz-C2S"/>
-                                                    <constraint firstAttribute="height" constant="293" id="jaE-Db-5Fr"/>
+                                                    <constraint firstAttribute="width" constant="238" id="BoV-Xz-C2S"/>
+                                                    <constraint firstAttribute="height" constant="362" id="jaE-Db-5Fr"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="7du-Gn-9cZ" firstAttribute="centerY" secondItem="TGQ-jR-8lo" secondAttribute="centerY" constant="16" id="EoX-ST-R2u"/>
-                                            <constraint firstItem="hon-Af-h6l" firstAttribute="centerY" secondItem="TGQ-jR-8lo" secondAttribute="centerY" constant="0.5" id="IAJ-AO-LIf"/>
-                                            <constraint firstItem="7du-Gn-9cZ" firstAttribute="centerX" secondItem="TGQ-jR-8lo" secondAttribute="centerX" id="bDN-gi-e1Z"/>
+                                            <constraint firstItem="hon-Af-h6l" firstAttribute="centerY" secondItem="TGQ-jR-8lo" secondAttribute="centerY" constant="-0.5" id="IAJ-AO-LIf"/>
                                             <constraint firstItem="hon-Af-h6l" firstAttribute="centerX" secondItem="TGQ-jR-8lo" secondAttribute="centerX" id="hLY-YS-yuZ"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Zz-oD-aHa">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Zz-oD-aHa">
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mwm-Ij-9gA">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mwm-Ij-9gA">
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>

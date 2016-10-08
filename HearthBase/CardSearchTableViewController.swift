@@ -102,7 +102,7 @@ class CardSearchTableViewController: UITableViewController, UISearchBarDelegate 
             if let cardvc = nvc?.topViewController as? CardViewController {
                 if let cardCell = sender as? CardTableViewCell {
                     cardvc.card = database.getCard(for: cardCell.cardId!)
-                    let imageData = database.getCardImageData(for: cardCell.cardId!)
+                    let imageData = self.database.getCardImageData(for: cardCell.cardId!)
                     cardvc.normalImage = UIImage(data: imageData!)
                 }
             }
