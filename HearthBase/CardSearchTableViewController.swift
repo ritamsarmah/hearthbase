@@ -11,10 +11,14 @@ import UIKit
 class CardSearchTableViewController: UITableViewController, UISearchBarDelegate {
     
     @IBOutlet weak var searchBar: UISearchBar!
-    let database = HearthstoneSearch()
     
-    var cards = [Card]()
-    var imageCache = [String: Data]()
+    private let database = HearthstoneSearch()
+    private var cards = [Card]()
+    private var imageCache = [String: Data]()
+    
+    struct Storyboard {
+        static let ShowCardSegue = "Show Card Detail"
+    }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
@@ -22,6 +26,7 @@ class CardSearchTableViewController: UITableViewController, UISearchBarDelegate 
         DispatchQueue.global(qos: .userInitiated).async {
             if let requestedCards = self.database.search(for: searchBar.text!) {
                 self.cards = requestedCards
+                print(self.cards.first!.id)
                 DispatchQueue.main.async {
                     self.tableView.reloadSections(IndexSet([0]), with: .automatic)
                     
@@ -62,6 +67,7 @@ class CardSearchTableViewController: UITableViewController, UISearchBarDelegate 
         
         let card = cards[indexPath.row]
         cell.cardName.text = card.name
+        cell.cardId = card.id
         cell.imageLoadingIndicator.startAnimating()
         
         if let imageData = imageCache[card.id] {
@@ -86,15 +92,22 @@ class CardSearchTableViewController: UITableViewController, UISearchBarDelegate 
         return cell
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Storyboard.ShowCardSegue {
+            let nvc = segue.destination as? UINavigationController
+            if let cardvc = nvc?.topViewController as? CardViewController {
+                if let cardCell = sender as? CardTableViewCell {
+                    cardvc.card = database.getCard(for: cardCell.cardId!)
+                    let imageData = database.getCardImageData(for: cardCell.cardId!)
+                    cardvc.normalImage = UIImage(data: imageData!)
+                }
+            }
+        }
+    }
     
     // MARK: - Alerts
     
@@ -110,7 +123,7 @@ class CardSearchTableViewController: UITableViewController, UISearchBarDelegate 
         
         switch type {
         case .cardNotFound:
-            alert = UIAlertController(title: "Unable to find card!", message: nil, preferredStyle: .alert)
+            alert = UIAlertController(title: "No matches found!", message: nil, preferredStyle: .alert)
             alert.addAction(dismissAction)
         }
         

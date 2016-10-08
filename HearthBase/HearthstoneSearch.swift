@@ -11,8 +11,8 @@ import SwiftyJSON
 
 class HearthstoneSearch {
     
-    let url = URL(string: "https://api.hearthstonejson.com/v1/13921/enUS/cards.collectible.json")
-    let cardImageUrl = "http://wow.zamimg.com/images/hearthstone/cards/enus/original/"
+    private let url = URL(string: "https://api.hearthstonejson.com/v1/13921/enUS/cards.collectible.json")
+    private let cardImageUrl = "http://wow.zamimg.com/images/hearthstone/cards/enus/original/"
     
     // Returns card ID as String
     func search(for searchText: String) -> [Card]? {
@@ -48,12 +48,12 @@ class HearthstoneSearch {
         }
     }
     
-    // Returns info as JSON for card ID
-    func getCard(for id: String) -> JSON {
+    // Returns card based on card ID
+    func getCard(for id: String) -> Card? {
         let json = getJson()
         for card in json.arrayValue {
             if card["id"].stringValue == id {
-                return card
+                return createCard(from: card)
             }
         }
         return nil
@@ -70,24 +70,14 @@ class HearthstoneSearch {
             return nil
         }
     }
-    
-    func getAllCards() -> [Card] {
-        let json = getJson()
-        var cards = [Card]()
-        for card in json.arrayValue {
-            let newCard = createCard(from: card)
-            cards.append(newCard)
-        }
-        return cards
-    }
-    
+
     // MARK: Helper Functions
-    fileprivate func getJson() -> JSON {
+    private func getJson() -> JSON {
         let data = try! Data(contentsOf: url!)
         return JSON(data: data)
     }
     
-    fileprivate func createCard(from data: JSON) -> Card {
+    private func createCard(from data: JSON) -> Card {
         return Card(name: data["name"].stringValue,
                     id: data["id"].stringValue,
                     type: data["type"].stringValue,

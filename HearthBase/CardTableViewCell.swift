@@ -16,5 +16,6 @@ class CardTableViewCell: UITableViewCell {
     @IBOutlet weak var cardType: UILabel!
     @IBOutlet weak var cardRarity: UILabel!
     @IBOutlet weak var imageLoadingIndicator: UIActivityIndicatorView!
+    var cardId: String?
     
 }

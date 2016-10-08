@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		203546A41DA2D32F00F849C3 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203546A31DA2D32F00F849C3 /* CardViewController.swift */; };
 		209E58941D85CC9A00A8FC43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209E58931D85CC9A00A8FC43 /* AppDelegate.swift */; };
 		209E58991D85CC9A00A8FC43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 209E58971D85CC9A00A8FC43 /* Main.storyboard */; };
 		209E589B1D85CC9A00A8FC43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 209E589A1D85CC9A00A8FC43 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		203546A31DA2D32F00F849C3 /* CardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		209E58901D85CC9A00A8FC43 /* HearthBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HearthBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		209E58931D85CC9A00A8FC43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		209E58981D85CC9A00A8FC43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -70,8 +72,9 @@
 				209E58931D85CC9A00A8FC43 /* AppDelegate.swift */,
 				20B59E701D9DDFE100ACDC7E /* CardSearchTableViewController.swift */,
 				20B59E721D9DE02600ACDC7E /* CardTableViewCell.swift */,
-				209E58A51D85CD5200A8FC43 /* HearthstoneSearch.swift */,
+				203546A31DA2D32F00F849C3 /* CardViewController.swift */,
 				20F748841D9EEA36004B8F5D /* Card.swift */,
+				209E58A51D85CD5200A8FC43 /* HearthstoneSearch.swift */,
 				209E58971D85CC9A00A8FC43 /* Main.storyboard */,
 				209E589A1D85CC9A00A8FC43 /* Assets.xcassets */,
 				209E589C1D85CC9A00A8FC43 /* LaunchScreen.storyboard */,
@@ -225,6 +228,7 @@
 				20F748851D9EEA36004B8F5D /* Card.swift in Sources */,
 				209E58A61D85CD5200A8FC43 /* HearthstoneSearch.swift in Sources */,
 				20B59E711D9DDFE100ACDC7E /* CardSearchTableViewController.swift in Sources */,
+				203546A41DA2D32F00F849C3 /* CardViewController.swift in Sources */,
 				209E58941D85CC9A00A8FC43 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
