@@ -15,6 +15,7 @@ class CardViewController: UIViewController {
     
     @IBOutlet weak var cardName: UILabel!
     @IBOutlet weak var cardType: UILabel!
+    @IBOutlet weak var cardRarity: UILabel!
     
     @IBOutlet weak var normalCardImageView: UIImageView!
     
@@ -27,10 +28,31 @@ class CardViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        print("Card name: ", card?.name , "Card type: ", card?.type)
         cardName.text = card?.name
         cardType.text = card?.type.capitalized
+        setRarityLabel()
         
+    }
+    
+    private func setRarityLabel() {
+        guard let rarity = card?.rarity else {
+            return
+        }
+        
+        cardRarity.text = rarity.capitalized
+        
+        switch rarity {
+        case "FREE", "COMMON":
+            cardRarity.textColor = UIColor.darkGray
+        case "RARE":
+            cardRarity.textColor = UIColor.blue
+        case "EPIC":
+            cardRarity.textColor = UIColor.purple
+        case "LEGENDARY":
+            cardRarity.textColor = UIColor.orange
+        default:
+            cardRarity.textColor = UIColor.black
+        }
     }
     
     @IBAction func done(_ sender: UIBarButtonItem) {

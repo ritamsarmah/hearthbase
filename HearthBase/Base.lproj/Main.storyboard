@@ -156,19 +156,27 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Rarity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0f-1J-Qfb">
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Mwm-Ij-9gA" firstAttribute="leading" secondItem="ta1-8z-gAA" secondAttribute="leading" constant="8" id="2GE-u4-N6D"/>
                                     <constraint firstItem="0Zz-oD-aHa" firstAttribute="top" secondItem="TGQ-jR-8lo" secondAttribute="bottom" constant="14" id="3EY-lS-g87"/>
                                     <constraint firstItem="0Zz-oD-aHa" firstAttribute="top" secondItem="ta1-8z-gAA" secondAttribute="top" constant="405" id="6g0-V6-9Ix"/>
-                                    <constraint firstItem="Mwm-Ij-9gA" firstAttribute="top" secondItem="0Zz-oD-aHa" secondAttribute="bottom" constant="8" id="CLC-oD-cmu"/>
+                                    <constraint firstItem="Mwm-Ij-9gA" firstAttribute="top" secondItem="0Zz-oD-aHa" secondAttribute="bottom" constant="37" id="CLC-oD-cmu"/>
                                     <constraint firstItem="TGQ-jR-8lo" firstAttribute="top" secondItem="ta1-8z-gAA" secondAttribute="top" id="LM3-Cd-Ssy"/>
                                     <constraint firstItem="0Zz-oD-aHa" firstAttribute="leading" secondItem="ta1-8z-gAA" secondAttribute="leadingMargin" id="LMj-gv-Twh"/>
                                     <constraint firstItem="0Zz-oD-aHa" firstAttribute="trailing" secondItem="ta1-8z-gAA" secondAttribute="trailingMargin" id="Pfy-9M-Cld"/>
+                                    <constraint firstItem="q0f-1J-Qfb" firstAttribute="leading" secondItem="Mwm-Ij-9gA" secondAttribute="leading" id="Ptb-Wd-0ZJ"/>
+                                    <constraint firstItem="q0f-1J-Qfb" firstAttribute="top" secondItem="Mwm-Ij-9gA" secondAttribute="bottom" constant="-50" id="QNt-MO-XmU"/>
                                     <constraint firstAttribute="trailing" secondItem="Mwm-Ij-9gA" secondAttribute="trailing" constant="8" id="S3Z-R0-dQL"/>
                                     <constraint firstItem="TGQ-jR-8lo" firstAttribute="leading" secondItem="ta1-8z-gAA" secondAttribute="leading" id="U0g-RX-fqO"/>
                                     <constraint firstAttribute="trailing" secondItem="TGQ-jR-8lo" secondAttribute="trailing" id="eY3-Do-BmN"/>
                                     <constraint firstItem="0Zz-oD-aHa" firstAttribute="centerX" secondItem="ta1-8z-gAA" secondAttribute="centerX" id="g0A-LF-YcP"/>
+                                    <constraint firstItem="q0f-1J-Qfb" firstAttribute="trailing" secondItem="Mwm-Ij-9gA" secondAttribute="trailing" id="g9E-Fm-lh0"/>
                                     <constraint firstAttribute="bottom" secondItem="0Zz-oD-aHa" secondAttribute="bottom" constant="234" id="oZM-qn-6yO"/>
                                 </constraints>
                             </scrollView>
@@ -190,6 +198,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cardName" destination="0Zz-oD-aHa" id="Aex-Fg-NeX"/>
+                        <outlet property="cardRarity" destination="q0f-1J-Qfb" id="kYQ-EJ-nwY"/>
                         <outlet property="cardType" destination="Mwm-Ij-9gA" id="wfi-fD-4KQ"/>
                         <outlet property="normalCardImageView" destination="hon-Af-h6l" id="S6B-Dm-5h9"/>
                     </connections>
