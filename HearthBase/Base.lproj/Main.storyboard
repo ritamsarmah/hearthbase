@@ -161,8 +161,18 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flavor Text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcN-G6-aTm">
+                                        <color key="backgroundColor" red="0.93818783760070801" green="0.9071846604347229" blue="0.82348054647445679" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="96" id="zXB-ZI-3bb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="KcN-G6-aTm" firstAttribute="top" secondItem="Mwm-Ij-9gA" secondAttribute="bottom" constant="8" symbolic="YES" id="0vM-5d-ofu"/>
                                     <constraint firstItem="Mwm-Ij-9gA" firstAttribute="leading" secondItem="ta1-8z-gAA" secondAttribute="leading" constant="8" id="2GE-u4-N6D"/>
                                     <constraint firstItem="0Zz-oD-aHa" firstAttribute="top" secondItem="TGQ-jR-8lo" secondAttribute="bottom" constant="14" id="3EY-lS-g87"/>
                                     <constraint firstItem="0Zz-oD-aHa" firstAttribute="top" secondItem="ta1-8z-gAA" secondAttribute="top" constant="405" id="6g0-V6-9Ix"/>
@@ -177,11 +187,13 @@
                                     <constraint firstAttribute="trailing" secondItem="TGQ-jR-8lo" secondAttribute="trailing" id="eY3-Do-BmN"/>
                                     <constraint firstItem="0Zz-oD-aHa" firstAttribute="centerX" secondItem="ta1-8z-gAA" secondAttribute="centerX" id="g0A-LF-YcP"/>
                                     <constraint firstItem="q0f-1J-Qfb" firstAttribute="trailing" secondItem="Mwm-Ij-9gA" secondAttribute="trailing" id="g9E-Fm-lh0"/>
+                                    <constraint firstItem="KcN-G6-aTm" firstAttribute="trailing" secondItem="Mwm-Ij-9gA" secondAttribute="trailing" id="jQA-pO-i0W"/>
+                                    <constraint firstItem="KcN-G6-aTm" firstAttribute="leading" secondItem="Mwm-Ij-9gA" secondAttribute="leading" id="nWP-8X-2cl"/>
                                     <constraint firstAttribute="bottom" secondItem="0Zz-oD-aHa" secondAttribute="bottom" constant="234" id="oZM-qn-6yO"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.95362216234207153" green="0.93042129278182983" blue="0.86763942241668701" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ta1-8z-gAA" firstAttribute="bottom" secondItem="fAT-1z-3UE" secondAttribute="top" id="5g7-07-26W"/>
                             <constraint firstItem="ta1-8z-gAA" firstAttribute="top" secondItem="qpU-te-Yyv" secondAttribute="top" id="7eD-eI-Kcz"/>
@@ -197,6 +209,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cardFlavor" destination="KcN-G6-aTm" id="g6e-9T-Dy1"/>
                         <outlet property="cardName" destination="0Zz-oD-aHa" id="Aex-Fg-NeX"/>
                         <outlet property="cardRarity" destination="q0f-1J-Qfb" id="kYQ-EJ-nwY"/>
                         <outlet property="cardType" destination="Mwm-Ij-9gA" id="wfi-fD-4KQ"/>

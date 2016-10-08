@@ -15,13 +15,20 @@ class Card {
     let type: String
     let text: String
     let rarity: String
+    let flavor: String
     
-    init(name: String, id: String, type: String, text: String, rarity: String) {
+    init(name: String, id: String, type: String, text: String, rarity: String, flavor: String) {
         self.name = name
         self.id = id
         self.type = type
         self.text = text
         self.rarity = rarity
+        
+        let regex = try! NSRegularExpression(pattern: "<[^>]*>", options: [])
+        self.flavor = regex.stringByReplacingMatches(in: flavor,
+                                                     options: [],
+                                                     range: NSMakeRange(0, flavor.characters.count),
+                                                     withTemplate: "")
     }
     
 }

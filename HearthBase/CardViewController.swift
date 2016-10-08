@@ -13,6 +13,7 @@ class CardViewController: UIViewController {
     var card: Card?
     var normalImage: UIImage?
     
+    @IBOutlet weak var cardFlavor: UILabel!
     @IBOutlet weak var cardName: UILabel!
     @IBOutlet weak var cardType: UILabel!
     @IBOutlet weak var cardRarity: UILabel!
@@ -21,6 +22,13 @@ class CardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        cardFlavor.layer.cornerRadius = 6
+        cardFlavor.layer.borderWidth = 1
+        cardFlavor.layer.borderColor = UIColor(red:0.84, green:0.76, blue:0.56, alpha:1.0).cgColor
+        cardFlavor.clipsToBounds = true
+        cardFlavor.numberOfLines = 0
+        
         if let image = normalImage {
             normalCardImageView.image = image
         }
@@ -28,8 +36,10 @@ class CardViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        cardName.text = card?.name
-        cardType.text = card?.type.capitalized
+        cardName.text = card!.name
+        cardType.text = card!.type.capitalized
+        
+        cardFlavor.text = card!.flavor
         setRarityLabel()
         
     }
@@ -45,11 +55,11 @@ class CardViewController: UIViewController {
         case "FREE", "COMMON":
             cardRarity.textColor = UIColor.darkGray
         case "RARE":
-            cardRarity.textColor = UIColor.blue
+            cardRarity.textColor = UIColor(red:0.10, green:0.26, blue:0.77, alpha:1.0)
         case "EPIC":
-            cardRarity.textColor = UIColor.purple
+            cardRarity.textColor = UIColor(red:0.70, green:0.00, blue:0.99, alpha:1.0)
         case "LEGENDARY":
-            cardRarity.textColor = UIColor.orange
+            cardRarity.textColor = UIColor(red:0.99, green:0.50, blue:0.11, alpha:1.0)
         default:
             cardRarity.textColor = UIColor.black
         }

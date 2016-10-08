@@ -82,7 +82,8 @@ class HearthstoneSearch {
                     id: data["id"].stringValue,
                     type: data["type"].stringValue,
                     text: data["text"].stringValue,
-                    rarity: data["rarity"].stringValue)
+                    rarity: data["rarity"].stringValue,
+                    flavor: data["flavor"].stringValue)
     }
     
 }
