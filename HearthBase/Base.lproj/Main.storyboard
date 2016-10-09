@@ -146,50 +146,56 @@
                                             <constraint firstItem="hon-Af-h6l" firstAttribute="centerX" secondItem="TGQ-jR-8lo" secondAttribute="centerX" id="hLY-YS-yuZ"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Zz-oD-aHa">
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mwm-Ij-9gA">
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Rarity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0f-1J-Qfb">
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flavor Text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcN-G6-aTm">
-                                        <color key="backgroundColor" red="0.93818783760070801" green="0.9071846604347229" blue="0.82348054647445679" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SRn-uE-gm7">
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="z5R-WJ-trd">
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Zz-oD-aHa">
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Rarity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0f-1J-Qfb">
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzw-E9-HA0">
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" placeholderIntrinsicWidth="71" placeholderIntrinsicHeight="60" text="Flavor Text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcN-G6-aTm">
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="77" id="ZQm-9H-zxC"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.93818783760000002" green="0.90718466040000001" blue="0.82348054650000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="96" id="zXB-ZI-3bb"/>
+                                            <constraint firstItem="z5R-WJ-trd" firstAttribute="leading" secondItem="SRn-uE-gm7" secondAttribute="leading" constant="8" id="4DD-Ao-aS5"/>
+                                            <constraint firstAttribute="bottom" secondItem="z5R-WJ-trd" secondAttribute="bottom" constant="8" id="Dmo-hf-REB"/>
+                                            <constraint firstItem="z5R-WJ-trd" firstAttribute="top" secondItem="SRn-uE-gm7" secondAttribute="top" constant="16" id="OLy-4R-k8Q"/>
+                                            <constraint firstAttribute="trailing" secondItem="z5R-WJ-trd" secondAttribute="trailing" constant="8" id="Uzj-I7-E2f"/>
+                                            <constraint firstAttribute="height" constant="196" id="xpP-hp-4zW"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="KcN-G6-aTm" firstAttribute="top" secondItem="Mwm-Ij-9gA" secondAttribute="bottom" constant="8" symbolic="YES" id="0vM-5d-ofu"/>
-                                    <constraint firstItem="Mwm-Ij-9gA" firstAttribute="leading" secondItem="ta1-8z-gAA" secondAttribute="leading" constant="8" id="2GE-u4-N6D"/>
-                                    <constraint firstItem="0Zz-oD-aHa" firstAttribute="top" secondItem="TGQ-jR-8lo" secondAttribute="bottom" constant="14" id="3EY-lS-g87"/>
-                                    <constraint firstItem="0Zz-oD-aHa" firstAttribute="top" secondItem="ta1-8z-gAA" secondAttribute="top" constant="405" id="6g0-V6-9Ix"/>
-                                    <constraint firstItem="Mwm-Ij-9gA" firstAttribute="top" secondItem="0Zz-oD-aHa" secondAttribute="bottom" constant="37" id="CLC-oD-cmu"/>
+                                    <constraint firstItem="SRn-uE-gm7" firstAttribute="top" secondItem="ta1-8z-gAA" secondAttribute="top" constant="399" id="2PY-VS-Oci"/>
                                     <constraint firstItem="TGQ-jR-8lo" firstAttribute="top" secondItem="ta1-8z-gAA" secondAttribute="top" id="LM3-Cd-Ssy"/>
-                                    <constraint firstItem="0Zz-oD-aHa" firstAttribute="leading" secondItem="ta1-8z-gAA" secondAttribute="leadingMargin" id="LMj-gv-Twh"/>
-                                    <constraint firstItem="0Zz-oD-aHa" firstAttribute="trailing" secondItem="ta1-8z-gAA" secondAttribute="trailingMargin" id="Pfy-9M-Cld"/>
-                                    <constraint firstItem="q0f-1J-Qfb" firstAttribute="leading" secondItem="Mwm-Ij-9gA" secondAttribute="leading" id="Ptb-Wd-0ZJ"/>
-                                    <constraint firstItem="q0f-1J-Qfb" firstAttribute="top" secondItem="Mwm-Ij-9gA" secondAttribute="bottom" constant="-50" id="QNt-MO-XmU"/>
-                                    <constraint firstAttribute="trailing" secondItem="Mwm-Ij-9gA" secondAttribute="trailing" constant="8" id="S3Z-R0-dQL"/>
+                                    <constraint firstItem="SRn-uE-gm7" firstAttribute="top" secondItem="TGQ-jR-8lo" secondAttribute="bottom" symbolic="YES" id="Q8M-A5-J4f"/>
                                     <constraint firstItem="TGQ-jR-8lo" firstAttribute="leading" secondItem="ta1-8z-gAA" secondAttribute="leading" id="U0g-RX-fqO"/>
+                                    <constraint firstItem="SRn-uE-gm7" firstAttribute="bottom" secondItem="ta1-8z-gAA" secondAttribute="bottomMargin" id="VtB-II-dn0"/>
                                     <constraint firstAttribute="trailing" secondItem="TGQ-jR-8lo" secondAttribute="trailing" id="eY3-Do-BmN"/>
-                                    <constraint firstItem="0Zz-oD-aHa" firstAttribute="centerX" secondItem="ta1-8z-gAA" secondAttribute="centerX" id="g0A-LF-YcP"/>
-                                    <constraint firstItem="q0f-1J-Qfb" firstAttribute="trailing" secondItem="Mwm-Ij-9gA" secondAttribute="trailing" id="g9E-Fm-lh0"/>
-                                    <constraint firstItem="KcN-G6-aTm" firstAttribute="trailing" secondItem="Mwm-Ij-9gA" secondAttribute="trailing" id="jQA-pO-i0W"/>
-                                    <constraint firstItem="KcN-G6-aTm" firstAttribute="leading" secondItem="Mwm-Ij-9gA" secondAttribute="leading" id="nWP-8X-2cl"/>
-                                    <constraint firstAttribute="bottom" secondItem="0Zz-oD-aHa" secondAttribute="bottom" constant="234" id="oZM-qn-6yO"/>
+                                    <constraint firstItem="SRn-uE-gm7" firstAttribute="centerX" secondItem="TGQ-jR-8lo" secondAttribute="centerX" id="ngb-pI-zKh"/>
+                                    <constraint firstItem="SRn-uE-gm7" firstAttribute="leading" secondItem="ta1-8z-gAA" secondAttribute="leadingMargin" id="qFS-3a-OyM"/>
+                                    <constraint firstItem="SRn-uE-gm7" firstAttribute="centerX" secondItem="ta1-8z-gAA" secondAttribute="centerX" id="wVr-yZ-YIp"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -212,7 +218,8 @@
                         <outlet property="cardFlavor" destination="KcN-G6-aTm" id="g6e-9T-Dy1"/>
                         <outlet property="cardName" destination="0Zz-oD-aHa" id="Aex-Fg-NeX"/>
                         <outlet property="cardRarity" destination="q0f-1J-Qfb" id="kYQ-EJ-nwY"/>
-                        <outlet property="cardType" destination="Mwm-Ij-9gA" id="wfi-fD-4KQ"/>
+                        <outlet property="cardType" destination="mzw-E9-HA0" id="eaa-0m-2uo"/>
+                        <outlet property="infoView" destination="SRn-uE-gm7" id="FAM-FV-76F"/>
                         <outlet property="normalCardImageView" destination="hon-Af-h6l" id="S6B-Dm-5h9"/>
                     </connections>
                 </viewController>

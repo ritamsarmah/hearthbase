@@ -17,34 +17,50 @@ class HearthstoneSearch {
     // Returns card ID as String
     func search(for searchText: String) -> [Card]? {
         let json = getJson()
-        var cards = [Card]() // More relevant matches are at the front
-        var secondary = [Card]()
+        var cards = [Card]() // Cards matching from front
+        var secondary = [Card]() // Card matching with substring
+        var raceCards = [Card]() // Cards matching with race
+        var textCards = [Card]() // Cards matching with card text
+        
         
         for card in json.arrayValue {
             
+            // Ignores hero data in JSON
             if card["type"].stringValue == "HERO" {
                 continue
             }
             
             let name = card["name"].stringValue.lowercased()
+            let race = card["race"].stringValue.lowercased()
+            let text = card["text"].stringValue.lowercased()
             
             if name.contains(searchText.lowercased()) {
                 let newCard = createCard(from: card)
-                
+
                 // Checks if searchText matches first word
                 if name.hasPrefix(searchText.lowercased()) {
                     cards.append(newCard)
                 } else {
                     secondary.append(newCard)
                 }
+            } else if race.contains(searchText.lowercased()) {
+                let newCard = createCard(from: card)
+                raceCards.append(newCard)
+            } else if text.contains(searchText.lowercased()) {
+                let newCard = createCard(from: card)
+                textCards.append(newCard)
             }
+            
         }
         
-        if cards.isEmpty && secondary.isEmpty {
-            return nil
-        } else {
-            cards.append(contentsOf: secondary)
+        cards.append(contentsOf: secondary)
+        cards.append(contentsOf: raceCards)
+        cards.append(contentsOf: textCards)
+        
+        if !cards.isEmpty {
             return cards
+        } else {
+            return nil
         }
     }
     
@@ -70,7 +86,7 @@ class HearthstoneSearch {
             return nil
         }
     }
-
+    
     // MARK: Helper Functions
     private func getJson() -> JSON {
         let data = try! Data(contentsOf: url!)

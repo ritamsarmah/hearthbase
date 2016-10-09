@@ -20,13 +20,16 @@ class CardViewController: UIViewController {
     
     @IBOutlet weak var normalCardImageView: UIImageView!
     
+    @IBOutlet weak var infoView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        cardFlavor.layer.cornerRadius = 6
-        cardFlavor.layer.borderWidth = 1
-        cardFlavor.layer.borderColor = UIColor(red:0.84, green:0.76, blue:0.56, alpha:1.0).cgColor
-        cardFlavor.clipsToBounds = true
+        
+        infoView.layer.cornerRadius = 6
+        infoView.layer.borderWidth = 1
+        infoView.layer.borderColor = UIColor(red:0.84, green:0.76, blue:0.56, alpha:1.0).cgColor
+        infoView.clipsToBounds = true
         cardFlavor.numberOfLines = 0
         
         if let image = normalImage {

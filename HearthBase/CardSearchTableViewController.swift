@@ -26,7 +26,6 @@ class CardSearchTableViewController: UITableViewController, UISearchBarDelegate 
         DispatchQueue.global(qos: .userInitiated).async {
             if let requestedCards = self.database.search(for: searchBar.text!) {
                 self.cards = requestedCards
-                print(self.cards.first!.id)
                 DispatchQueue.main.async {
                     self.tableView.reloadSections(IndexSet([0]), with: .automatic)
                     
