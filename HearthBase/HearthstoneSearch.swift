@@ -20,7 +20,6 @@ class HearthstoneSearch {
         var cards = [Card]() // Cards matching from front
         var secondary = [Card]() // Card matching with substring
         var raceCards = [Card]() // Cards matching with race
-        var textCards = [Card]() // Cards matching with card text
         
         
         for card in json.arrayValue {
@@ -32,7 +31,6 @@ class HearthstoneSearch {
             
             let name = card["name"].stringValue.lowercased()
             let race = card["race"].stringValue.lowercased()
-            let text = card["text"].stringValue.lowercased()
             
             if name.contains(searchText.lowercased()) {
                 let newCard = createCard(from: card)
@@ -46,16 +44,12 @@ class HearthstoneSearch {
             } else if race.contains(searchText.lowercased()) {
                 let newCard = createCard(from: card)
                 raceCards.append(newCard)
-            } else if text.contains(searchText.lowercased()) {
-                let newCard = createCard(from: card)
-                textCards.append(newCard)
             }
             
         }
         
         cards.append(contentsOf: secondary)
         cards.append(contentsOf: raceCards)
-        cards.append(contentsOf: textCards)
         
         if !cards.isEmpty {
             return cards
