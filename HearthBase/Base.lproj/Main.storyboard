@@ -230,19 +230,31 @@
         <!--Recents-->
         <scene sceneID="NGX-SE-4XH">
             <objects>
-                <tableViewController id="NiC-hG-XDU" sceneMemberID="viewController">
+                <tableViewController id="NiC-hG-XDU" customClass="RecentsTableViewController" customModule="HearthBase" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="sFn-oO-Rqk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="9dg-lv-BVI">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Recent Card" textLabel="6ko-3q-2bW" style="IBUITableViewCellStyleDefault" id="9dg-lv-BVI">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9dg-lv-BVI" id="1Ml-J0-F2u">
                                     <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6ko-3q-2bW">
+                                            <frame key="frameInset" minX="15" width="345" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="bFL-lX-bnp" kind="show" identifier="Show Searches" id="clf-RF-wxQ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -251,7 +263,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Recents" id="Gsg-mU-ee3">
-                        <barButtonItem key="rightBarButtonItem" title="Clear" id="g12-Ob-ejn"/>
+                        <barButtonItem key="rightBarButtonItem" title="Clear" id="g12-Ob-ejn">
+                            <connections>
+                                <action selector="clearAllWithSender:" destination="NiC-hG-XDU" id="zQA-Pz-Ufg"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Xw-Cx-mjI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -315,4 +331,7 @@
             <point key="canvasLocation" x="4196" y="128.18590704647679"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="clf-RF-wxQ"/>
+    </inferredMetricsTieBreakers>
 </document>

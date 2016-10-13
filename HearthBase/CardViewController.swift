@@ -25,7 +25,6 @@ class CardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         infoView.layer.cornerRadius = 6
         infoView.layer.borderWidth = 1
         infoView.layer.borderColor = UIColor(red:0.84, green:0.76, blue:0.56, alpha:1.0).cgColor

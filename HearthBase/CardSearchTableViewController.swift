@@ -22,6 +22,7 @@ class CardSearchTableViewController: UITableViewController, UISearchBarDelegate 
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
+        RecentSearches().add(search: searchBar.text!)
         imageCache.removeAll()
         DispatchQueue.global(qos: .userInitiated).async {
             if let requestedCards = self.database.search(for: searchBar.text!) {
