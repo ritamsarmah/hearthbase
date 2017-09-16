@@ -7,73 +7,79 @@
 //
 
 import Foundation
+import Alamofire
 import SwiftyJSON
 
 class HearthstoneSearch {
     
-    private let url = URL(string: "https://api.hearthstonejson.com/v1/13921/enUS/cards.collectible.json")
-    private let cardImageUrl = "http://wow.zamimg.com/images/hearthstone/cards/enus/original/"
+    private let url = "https://omgvamp-hearthstone-v1.p.mashape.com/cards"
     
     // Returns card ID as String
-    func search(for searchText: String) -> [Card]? {
-        let json = getJson()
+    func search(for searchText: String, completionHandler: @escaping ([Card], Error?) -> ()) {
+        
+        let searchRequest = "https://omgvamp-hearthstone-v1.p.mashape.com/cards/search/\(searchText)?collectible=1"
         var cards = [Card]() // Cards matching from front
         var secondary = [Card]() // Card matching with substring
         var raceCards = [Card]() // Cards matching with race
         
-        
-        for card in json.arrayValue {
-            
-            // Ignores hero data in JSON
-            if card["type"].stringValue == "HERO" {
-                continue
-            }
-            
-            let name = card["name"].stringValue.lowercased()
-            let race = card["race"].stringValue.lowercased()
-            
-            if name.contains(searchText.lowercased()) {
-                let newCard = createCard(from: card)
-
-                // Checks if searchText matches first word
-                if name.hasPrefix(searchText.lowercased()) {
-                    cards.append(newCard)
-                } else {
-                    secondary.append(newCard)
+        Alamofire.request(searchRequest, headers: headers).responseJSON { response in
+            switch response.result {
+            case .success(let data):
+                let json = JSON(data)
+                for card in json.arrayValue {
+                    
+                    // Ignores hero data in JSON
+                    if card["type"].stringValue == "Hero" {
+                        continue
+                    }
+                    
+                    let name = card["name"].stringValue.lowercased()
+                    let race = card["race"].stringValue.lowercased()
+                    
+                    if name.contains(searchText.lowercased()) {
+                        let newCard = Card(with: card)
+                        
+                        // Checks if searchText matches first word
+                        if name.hasPrefix(searchText.lowercased()) {
+                            cards.append(newCard)
+                        } else {
+                            secondary.append(newCard)
+                        }
+                    } else if race.contains(searchText.lowercased()) {
+                        let newCard = Card(with: card)
+                        raceCards.append(newCard)
+                    }
                 }
-            } else if race.contains(searchText.lowercased()) {
-                let newCard = createCard(from: card)
-                raceCards.append(newCard)
+                cards.append(contentsOf: secondary)
+                cards.append(contentsOf: raceCards)
+                completionHandler(cards, nil)
+            case .failure(let error):
+                completionHandler(cards, error)
             }
-            
-        }
-        
-        cards.append(contentsOf: secondary)
-        cards.append(contentsOf: raceCards)
-        
-        if !cards.isEmpty {
-            return cards
-        } else {
-            return nil
         }
     }
     
     // Returns card based on card ID
-    func getCard(for id: String) -> Card? {
-        let json = getJson()
-        for card in json.arrayValue {
-            if card["id"].stringValue == id {
-                return createCard(from: card)
+    func getCard(withId id: String, completionHandler: @escaping (Card?, Error?) -> ()) {
+        let searchRequest = "https://omgvamp-hearthstone-v1.p.mashape.com/cards/\(id)?collectible=1"
+        headers["Accept"] = "application/json"
+        Alamofire.request(searchRequest, headers: headers).responseJSON { response in
+            switch response.result {
+            case .success(let data):
+                let json = JSON(data)
+                print(json)
+                completionHandler(self.createCard(with: json), nil)
+            case .failure(let error):
+                print(error)
+                completionHandler(nil, error)
             }
         }
-        return nil
     }
     
     // Returns data for card image based on ID
-    func getCardImageData(for id: String) -> Data? {
-        let imageURL = URL(string: cardImageUrl + id + ".png")
+    func getImageData(for card: Card) -> Data? {
         do {
-            let data = try Data(contentsOf: imageURL!)
+            let data = try Data(contentsOf: card.img)
             return data
         } catch {
             print(error)
@@ -82,18 +88,9 @@ class HearthstoneSearch {
     }
     
     // MARK: Helper Functions
-    private func getJson() -> JSON {
-        let data = try! Data(contentsOf: url!)
-        return JSON(data: data)
-    }
     
-    private func createCard(from data: JSON) -> Card {
-        return Card(name: data["name"].stringValue,
-                    id: data["id"].stringValue,
-                    type: data["type"].stringValue,
-                    text: data["text"].stringValue,
-                    rarity: data["rarity"].stringValue,
-                    flavor: data["flavor"].stringValue)
+    private func createCard(with json: JSON) -> Card {
+        return Card(with: json.arrayValue.first!)
     }
     
 }

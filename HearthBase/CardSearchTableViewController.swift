@@ -24,17 +24,13 @@ class CardSearchTableViewController: UITableViewController, UISearchBarDelegate 
         searchBar.resignFirstResponder()
         RecentSearches().add(search: searchBar.text!)
         imageCache.removeAll()
-        DispatchQueue.global(qos: .userInitiated).async {
-            if let requestedCards = self.database.search(for: searchBar.text!) {
+        self.database.search(for: searchBar.text!) { requestedCards, error in
+            if (!requestedCards.isEmpty) {
                 self.cards = requestedCards
-                DispatchQueue.main.async {
-                    self.tableView.reloadSections(IndexSet([0]), with: .automatic)
-                    
-                }
+                print(self.cards.count)
+                self.tableView.reloadSections(IndexSet([0]), with: .automatic)
             } else {
-                DispatchQueue.main.async {
-                    self.showAlert(for: .cardNotFound)
-                }
+                self.showAlert(for: .cardNotFound)
             }
         }
     }
@@ -75,14 +71,14 @@ class CardSearchTableViewController: UITableViewController, UISearchBarDelegate 
             cell.imageLoadingIndicator.stopAnimating()
         } else {
             DispatchQueue.global(qos: .userInitiated).async {
-                if let imageData = self.database.getCardImageData(for: card.id) {
+                if let imageData = self.database.getImageData(for: card) {
                     DispatchQueue.main.async {
                         cell.cardImageView.image = UIImage(data: imageData)
                         cell.imageLoadingIndicator.stopAnimating()
                     }
                     self.imageCache[card.id] = imageData
                 } else {
-                    print(("Failed to load image data"))
+                    print("Failed to load image data")
                 }
             }
         }
@@ -101,9 +97,9 @@ class CardSearchTableViewController: UITableViewController, UISearchBarDelegate 
             let nvc = segue.destination as? UINavigationController
             if let cardvc = nvc?.topViewController as? CardViewController {
                 if let cardCell = sender as? CardTableViewCell {
-                    cardvc.card = database.getCard(for: cardCell.cardId!)
-                    let imageData = self.database.getCardImageData(for: cardCell.cardId!)
-                    cardvc.normalImage = UIImage(data: imageData!)
+                    print("Card ID: \(String(describing: cardCell.cardId))")
+                    cardvc.cardId = cardCell.cardId
+                    cardvc.cardImage = cardCell.cardImageView.image
                 }
             }
         }

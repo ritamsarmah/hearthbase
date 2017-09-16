@@ -10,6 +10,7 @@
 		203546A41DA2D32F00F849C3 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203546A31DA2D32F00F849C3 /* CardViewController.swift */; };
 		2052AE901DAF1DDA00DB763E /* RecentSearches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2052AE8E1DAF1DDA00DB763E /* RecentSearches.swift */; };
 		2052AE911DAF1DDA00DB763E /* RecentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2052AE8F1DAF1DDA00DB763E /* RecentsTableViewController.swift */; };
+		2080D3921DB04A1300B854FC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2080D3911DB04A1300B854FC /* Constants.swift */; };
 		209E58941D85CC9A00A8FC43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209E58931D85CC9A00A8FC43 /* AppDelegate.swift */; };
 		209E58991D85CC9A00A8FC43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 209E58971D85CC9A00A8FC43 /* Main.storyboard */; };
 		209E589B1D85CC9A00A8FC43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 209E589A1D85CC9A00A8FC43 /* Assets.xcassets */; };
@@ -18,13 +19,14 @@
 		20B59E711D9DDFE100ACDC7E /* CardSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B59E701D9DDFE100ACDC7E /* CardSearchTableViewController.swift */; };
 		20B59E731D9DE02600ACDC7E /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B59E721D9DE02600ACDC7E /* CardTableViewCell.swift */; };
 		20F748851D9EEA36004B8F5D /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F748841D9EEA36004B8F5D /* Card.swift */; };
-		E754BBD8B46131D78A5087D6 /* Pods_HearthBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9C5EB988AC852BDBFBF00B7 /* Pods_HearthBase.framework */; };
+		CFBE3E11E77285891C6A1F52 /* Pods_HearthBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A74CA6ED5C3364E1A98DB5B1 /* Pods_HearthBase.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		203546A31DA2D32F00F849C3 /* CardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		2052AE8E1DAF1DDA00DB763E /* RecentSearches.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentSearches.swift; sourceTree = "<group>"; };
 		2052AE8F1DAF1DDA00DB763E /* RecentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentsTableViewController.swift; sourceTree = "<group>"; };
+		2080D3911DB04A1300B854FC /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		209E58901D85CC9A00A8FC43 /* HearthBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HearthBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		209E58931D85CC9A00A8FC43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		209E58981D85CC9A00A8FC43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -35,9 +37,9 @@
 		20B59E701D9DDFE100ACDC7E /* CardSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardSearchTableViewController.swift; sourceTree = "<group>"; };
 		20B59E721D9DE02600ACDC7E /* CardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
 		20F748841D9EEA36004B8F5D /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		45008CBD3DB7C14A0B8B26E6 /* Pods-HearthBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HearthBase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HearthBase/Pods-HearthBase.debug.xcconfig"; sourceTree = "<group>"; };
-		558B7114CA4084182C66F55D /* Pods-HearthBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HearthBase.release.xcconfig"; path = "Pods/Target Support Files/Pods-HearthBase/Pods-HearthBase.release.xcconfig"; sourceTree = "<group>"; };
-		B9C5EB988AC852BDBFBF00B7 /* Pods_HearthBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HearthBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		563B6359161A8FA19EB5417B /* Pods-HearthBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HearthBase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HearthBase/Pods-HearthBase.debug.xcconfig"; sourceTree = "<group>"; };
+		937F3E812D605013AB3BDBE8 /* Pods-HearthBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HearthBase.release.xcconfig"; path = "Pods/Target Support Files/Pods-HearthBase/Pods-HearthBase.release.xcconfig"; sourceTree = "<group>"; };
+		A74CA6ED5C3364E1A98DB5B1 /* Pods_HearthBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HearthBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E754BBD8B46131D78A5087D6 /* Pods_HearthBase.framework in Frameworks */,
+				CFBE3E11E77285891C6A1F52 /* Pods_HearthBase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,8 +59,8 @@
 			children = (
 				209E58921D85CC9A00A8FC43 /* HearthBase */,
 				209E58911D85CC9A00A8FC43 /* Products */,
-				653F6E5735A6DE680901644C /* Pods */,
-				BDBF40865D67CAB308C2C01D /* Frameworks */,
+				8BC24E5D1E7DCF3B14152F2E /* Pods */,
+				D39B07A509F18D17E2DBE105 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +81,7 @@
 				203546A31DA2D32F00F849C3 /* CardViewController.swift */,
 				20F748841D9EEA36004B8F5D /* Card.swift */,
 				209E58A51D85CD5200A8FC43 /* HearthstoneSearch.swift */,
+				2080D3911DB04A1300B854FC /* Constants.swift */,
 				2052AE8E1DAF1DDA00DB763E /* RecentSearches.swift */,
 				2052AE8F1DAF1DDA00DB763E /* RecentsTableViewController.swift */,
 				209E58971D85CC9A00A8FC43 /* Main.storyboard */,
@@ -89,19 +92,19 @@
 			path = HearthBase;
 			sourceTree = "<group>";
 		};
-		653F6E5735A6DE680901644C /* Pods */ = {
+		8BC24E5D1E7DCF3B14152F2E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				45008CBD3DB7C14A0B8B26E6 /* Pods-HearthBase.debug.xcconfig */,
-				558B7114CA4084182C66F55D /* Pods-HearthBase.release.xcconfig */,
+				563B6359161A8FA19EB5417B /* Pods-HearthBase.debug.xcconfig */,
+				937F3E812D605013AB3BDBE8 /* Pods-HearthBase.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		BDBF40865D67CAB308C2C01D /* Frameworks */ = {
+		D39B07A509F18D17E2DBE105 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B9C5EB988AC852BDBFBF00B7 /* Pods_HearthBase.framework */,
+				A74CA6ED5C3364E1A98DB5B1 /* Pods_HearthBase.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -113,12 +116,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 209E58A21D85CC9A00A8FC43 /* Build configuration list for PBXNativeTarget "HearthBase" */;
 			buildPhases = (
-				090705824FFDFDC5852CAAF8 /* [CP] Check Pods Manifest.lock */,
+				7F45DE938086789E78DA3D00 /* [CP] Check Pods Manifest.lock */,
 				209E588C1D85CC9A00A8FC43 /* Sources */,
 				209E588D1D85CC9A00A8FC43 /* Frameworks */,
 				209E588E1D85CC9A00A8FC43 /* Resources */,
-				F112BA59F6E79E9B75119304 /* [CP] Embed Pods Frameworks */,
-				2CC9F8C1EE4461A6C4B89505 /* [CP] Copy Pods Resources */,
+				F1467E0AA17D33F8DBFDF985 /* [CP] Embed Pods Frameworks */,
+				8CB22EFB202B373E5A33C65A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -136,7 +139,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Ritam Sarmah";
 				TargetAttributes = {
 					209E588F1D85CC9A00A8FC43 = {
@@ -178,7 +181,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		090705824FFDFDC5852CAAF8 /* [CP] Check Pods Manifest.lock */ = {
+		7F45DE938086789E78DA3D00 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -190,10 +193,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		2CC9F8C1EE4461A6C4B89505 /* [CP] Copy Pods Resources */ = {
+		8CB22EFB202B373E5A33C65A /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -208,7 +211,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HearthBase/Pods-HearthBase-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F112BA59F6E79E9B75119304 /* [CP] Embed Pods Frameworks */ = {
+		F1467E0AA17D33F8DBFDF985 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -238,6 +241,7 @@
 				20B59E711D9DDFE100ACDC7E /* CardSearchTableViewController.swift in Sources */,
 				203546A41DA2D32F00F849C3 /* CardViewController.swift in Sources */,
 				209E58941D85CC9A00A8FC43 /* AppDelegate.swift in Sources */,
+				2080D3921DB04A1300B854FC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +276,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -280,7 +286,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -304,7 +314,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -323,7 +333,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -331,7 +343,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -349,7 +365,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -360,7 +376,7 @@
 		};
 		209E58A31D85CC9A00A8FC43 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 45008CBD3DB7C14A0B8B26E6 /* Pods-HearthBase.debug.xcconfig */;
+			baseConfigurationReference = 563B6359161A8FA19EB5417B /* Pods-HearthBase.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -376,7 +392,7 @@
 		};
 		209E58A41D85CC9A00A8FC43 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 558B7114CA4084182C66F55D /* Pods-HearthBase.release.xcconfig */;
+			baseConfigurationReference = 937F3E812D605013AB3BDBE8 /* Pods-HearthBase.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;

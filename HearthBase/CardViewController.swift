@@ -10,15 +10,21 @@ import UIKit
 
 class CardViewController: UIViewController {
     
-    var card: Card?
-    var normalImage: UIImage?
+    var card: Card? {
+        didSet {
+            updateUI()
+        }
+    }
+    var cardId: String?
+    var cardImage: UIImage?
+    let database = HearthstoneSearch()
     
     @IBOutlet weak var cardFlavor: UILabel!
     @IBOutlet weak var cardName: UILabel!
     @IBOutlet weak var cardType: UILabel!
     @IBOutlet weak var cardRarity: UILabel!
     
-    @IBOutlet weak var normalCardImageView: UIImageView!
+    @IBOutlet weak var cardImageView: UIImageView!
     
     @IBOutlet weak var infoView: UIView!
     
@@ -30,37 +36,51 @@ class CardViewController: UIViewController {
         infoView.layer.borderColor = UIColor(red:0.84, green:0.76, blue:0.56, alpha:1.0).cgColor
         infoView.clipsToBounds = true
         cardFlavor.numberOfLines = 0
+        self.cardFlavor.text = ""
+        self.cardName.text = ""
+        self.cardType.text = ""
+        self.cardRarity.text = ""
         
-        if let image = normalImage {
-            normalCardImageView.image = image
+        if let cardImage = cardImage {
+            cardImageView.image = cardImage
+        }
+        
+        database.getCard(withId: cardId!) { (card, error) in
+            if card == nil {
+                print("data no card")
+            }
+            self.card = card
         }
         
     }
     
-    override func viewDidLayoutSubviews() {
-        cardName.text = card!.name
-        cardType.text = card!.type.capitalized
-        
-        cardFlavor.text = card!.flavor
-        setRarityLabel()
-        
+    private func updateUI() {
+        DispatchQueue.main.async {
+            if let card = self.card {
+                print(card.name)
+                self.cardFlavor.text = card.text
+                self.cardName.text = card.name
+                self.cardType.text = card.type
+                self.setRarityLabel(rarity: card.rarity)
+                self.cardImage = UIImage(data: self.database.getImageData(for: card)!)
+                self.cardImageView.image = self.cardImage
+            }
+        }
+        print("Hello world!")
     }
     
-    private func setRarityLabel() {
-        guard let rarity = card?.rarity else {
-            return
-        }
+    
+    private func setRarityLabel(rarity: String) {
+        cardRarity.text = rarity
         
-        cardRarity.text = rarity.capitalized
-        
-        switch rarity {
-        case "FREE", "COMMON":
+        switch rarity.capitalized {
+        case "Free", "Common":
             cardRarity.textColor = UIColor.darkGray
-        case "RARE":
+        case "Rare":
             cardRarity.textColor = UIColor(red:0.10, green:0.26, blue:0.77, alpha:1.0)
-        case "EPIC":
+        case "Epic":
             cardRarity.textColor = UIColor(red:0.70, green:0.00, blue:0.99, alpha:1.0)
-        case "LEGENDARY":
+        case "Legendary":
             cardRarity.textColor = UIColor(red:0.99, green:0.50, blue:0.11, alpha:1.0)
         default:
             cardRarity.textColor = UIColor.black
